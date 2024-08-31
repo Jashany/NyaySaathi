@@ -2,19 +2,24 @@ import React, { useState } from "react";
 import styles from "./DetaineeSignUp.module.css";
 import logo from "../../assets/logo.png";
 import hello from "../../assets/hello.png";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const DetaineeSignUp = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     age: "",
     gender: "",
     nationality: "",
-    identificationNumber: "",
+    Number: "",
+    idNumber: "",
     offence: "",
     dateOfArrest: "",
     legalRepresentationStatus: "",
     contactNumber: "",
-    chargeSheet: null,
+    chargeSheetLink: null,
+    number:""
   });
 
   const handleInputChange = (e) => {
@@ -34,8 +39,36 @@ const DetaineeSignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form Data Submitted:", formData);
+    
+    const f = async () => {
+      const formattedDateOfArrest = new Date(formData.dateOfArrest).toISOString().split('T')[0];
+      const date = new Date();
+      const response = await axios.post("http://localhost:3000/api/user/register", {
+        fullName: formData.fullName,
+        email: formData.email,
+        age: formData.age,
+        gender: formData.gender,
+        nationality: formData.nationality,
+        idNumber: formData.idNumber,
+        offence: formData.offence,
+        dateOfArrest: date,
+        legalRepresentationStatus: formData.legalRepresentationStatus,
+        contactNumber: formData.contactNumber,
+        chargeSheet: formData.chargeSheet ? formData.chargeSheet.name : null, 
+        number:"798090998",
+        chargeSheetLink: "jk",
+      }, {
+        withCredentials: true,
+      })
+
+      if(response.status === 200){
+        navigate("/login");
+      }
+      else{
+        alert("Something went wrong");
+      }
+    }
+    f();
   };
 
   return (
@@ -120,8 +153,8 @@ const DetaineeSignUp = () => {
               <label>Identification Number</label>
               <input
                 type="text"
-                name="identificationNumber"
-                value={formData.identificationNumber}
+                name="idNumber"
+                value={formData.idNumber}
                 onChange={handleInputChange}
                 style={{ width: "350px" }}
                 className={styles.inputField}

@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import styles from "./Login.module.css";
 import logo from "../../assets/logo.png";
 import hello from "../../assets/hello.png";
+import {useNavigate} from "react-router-dom";
+import axios from "axios";
+
 const Login = () => {
+
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
+    role: "", // Role 
     email: "",
     password: "",
   });
@@ -16,11 +22,27 @@ const Login = () => {
     });
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form Data Submitted:", formData);
+
+    const type = formData.role.toLowerCase();
+
+    const f = async () => {
+      const res = await axios.post(`http://localhost:3000/api/${type}/login`, {
+        email: formData.email,
+        password: formData.password,
+      },{withCredentials: true});
+      
+      if(res.status === 200){
+        navigate(`/${type}`);
+      }
+      else{
+        alert("Wrong Password or Email");
+      }
+    }
+
+    f();
+    
   };
 
   return (
@@ -37,13 +59,27 @@ const Login = () => {
         <h2 className={styles.title}>Login</h2>
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
+            <label>Select Role</label>
+            <select
+              name="role"
+              value={formData.role}
+              onChange={handleInputChange}
+              className={styles.inputField}
+              style={{ width: "350px" }}
+            >
+              <option value="">User</option>
+              <option value="lawyer">Lawyer</option>
+              <option value="judge">Judge</option>
+            </select>
+          </div>
+          <div className={styles.formGroup}>
             <label>Email</label>
             <input
               type="email"
               name="email"
               value={formData.email}
-              style={{ width: "350px" }}
               onChange={handleInputChange}
+              style={{ width: "350px" }}
               className={styles.inputField}
             />
           </div>
@@ -53,8 +89,8 @@ const Login = () => {
               type="password"
               name="password"
               value={formData.password}
-              style={{ width: "350px" }}
               onChange={handleInputChange}
+              style={{ width: "350px" }}
               className={styles.inputField}
             />
           </div>
