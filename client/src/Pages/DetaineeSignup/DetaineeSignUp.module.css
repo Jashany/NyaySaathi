@@ -1,0 +1,189 @@
+.signupForm {
+  background: #f4f6fc;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-poppins);
+}
+
+.header {
+  width: 100%;
+  padding-inline: 10rem;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.header div:nth-child(2) {
+  display: flex;
+  gap: 5rem;
+}
+
+.header div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.header img {
+  height: 25px;
+}
+
+.header p {
+  font-family: "DM Sans";
+}
+
+.header button {
+  background: #0e1a45;
+  border: none;
+  padding: 0.5rem 2rem;
+  color: white;
+  font-family: var(--font-secondary);
+  cursor: pointer;
+}
+
+.body {
+  background: #eef2fd;
+  width: 100%;
+  height: 70%;
+  margin-left: 10%;
+}
+.body h2 {
+    margin-top: 1rem;
+  margin-left: 3rem;
+  font-size: 1.25rem;
+  color: #0e1a45;
+
+  font-family: var(--font-poppins);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 2rem;
+}
+
+.body span {
+  color: #767676;
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: normal;
+}
+.body form {
+  margin-left: 3rem;
+}
+
+.formGroup {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.inputField {
+  padding: 10px 15px 10px 10px;
+  border: 1px solid #ccd1e4;
+  width: fit-content;
+  border-radius: 4px;
+  background-color: #eef2fd;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.selectField {
+  padding: 10px 10px 10px 0;
+  border: 1px solid #ccd1e4;
+  width: fit-content;
+  border-radius: 4px;
+  background-color: #eef2fd;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.inputField:focus {
+  border-color: #2e67f8;
+}
+
+.formGroup label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+
+  background-color: #eef2fd;
+  padding-inline: 10px;
+  font-size: 16px;
+  color: #333;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.group {
+  display: flex;
+  gap: 1rem;
+}
+
+.uploadContainer {
+  display: flex;
+  width: 400px;
+  height: 40px;
+  align-items: center;
+  justify-content: flex-end;
+  border: 1px solid #ccd1e4;
+  border-radius: 4px;
+  background-color: #eef2fd;
+  padding: 10px 10px;
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+
+  background-color: #eef2fd;
+  padding-inline: 10px;
+  font-size: 16px;
+  color: #333;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadButton {
+  padding: 2.5px 5px;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.line {
+  width: 80%;
+  margin-bottom: 40px;
+  height: 1px;
+  background: #5e5e60;
+  margin-top: 20px;
+}
+
+.submitButton {
+  background: #0e1a45;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.inputField::-webkit-datetime-edit {
+  color: transparent;
+}
+
+.inputField::-webkit-inner-spin-button,
+.inputField::-webkit-clear-button {
+  display: none;
+}
