@@ -25,7 +25,7 @@ const Home = () => {
             <div className={styles.body}>
                 <img src={mask} alt="" />
                 <div style={{
-                    flex: 0.7,
+                    flex: 0.6,
                     height:"Fit-content",
                 }}>
                     <div className={styles.upper}>
@@ -51,7 +51,7 @@ const Home = () => {
                             )
                         })}
                         <div className={styles.line}>
-                            
+
                         </div>
                     </div>
                 </div>

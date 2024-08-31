@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./DetaineeSignUp.module.css";
 import logo from "../../assets/logo.png";
-
+import hello from "../../assets/hello.png";
 const DetaineeSignUp = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -58,13 +58,14 @@ const DetaineeSignUp = () => {
             <div className={styles.formGroup}>
               <label>Full Name</label>
               <input
-                type="text"
-                name="fullName"
-                value={formData.fullName}
-                style={{ width: "350px" }}
-                onChange={handleInputChange}
-                className={styles.inputField}
-              />
+            
+            type="text"
+            name="fullName"
+            value={formData.fullName}
+            style={{ width: "350px" }}
+            onChange={handleInputChange}
+            className={styles.inputField}
+            />
             </div>
             <div className={styles.formGroup}>
               <label>Email</label>
@@ -75,7 +76,7 @@ const DetaineeSignUp = () => {
                 style={{ width: "350px" }}
                 onChange={handleInputChange}
                 className={styles.inputField}
-              />
+                />
             </div>
           </div>
           <div className={styles.group}>
@@ -88,7 +89,7 @@ const DetaineeSignUp = () => {
                 onChange={handleInputChange}
                 className={styles.inputField}
                 style={{ width: "100px" }}
-              />
+                />
             </div>
             <div className={styles.formGroup}>
               <label>Gender</label>
@@ -98,7 +99,7 @@ const DetaineeSignUp = () => {
                 onChange={handleInputChange}
                 className={styles.selectField}
                 style={{ width: "150px" }}
-              >
+                >
                 <option value=""></option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -113,7 +114,7 @@ const DetaineeSignUp = () => {
                 value={formData.nationality}
                 onChange={handleInputChange}
                 className={styles.inputField}
-              />
+                />
             </div>
             <div className={styles.formGroup}>
               <label>Identification Number</label>
@@ -124,7 +125,7 @@ const DetaineeSignUp = () => {
                 onChange={handleInputChange}
                 style={{ width: "350px" }}
                 className={styles.inputField}
-              />
+                />
             </div>
           </div>
           <div className={styles.line}></div>
@@ -137,7 +138,7 @@ const DetaineeSignUp = () => {
                 onChange={handleInputChange}
                 className={styles.selectField}
                 style={{ width: "350px" }}
-              >
+                >
                 <option style={{ width: "350px" }} value=""></option>
                 <option style={{ width: "350px" }} value="ipc302">
                   IPC 302
@@ -163,7 +164,7 @@ const DetaineeSignUp = () => {
                 onChange={handleInputChange}
                 className={styles.inputField}
                 placeholder=""
-              />
+                />
             </div>
           </div>
           <div className={styles.group}>
@@ -176,7 +177,7 @@ const DetaineeSignUp = () => {
                 value={formData.legalRepresentationStatus}
                 onChange={handleInputChange}
                 className={styles.inputField}
-              />
+                />
             </div>
             <div className={styles.formGroup}>
               <label>Contact Number</label>
@@ -187,7 +188,7 @@ const DetaineeSignUp = () => {
                 onChange={handleInputChange}
                 style={{ width: "350px" }}
                 className={styles.inputField}
-              />
+                />
             </div>
           </div>
           <div className={styles.uploadContainer}>
@@ -197,7 +198,7 @@ const DetaineeSignUp = () => {
         id="file"
         className={styles.fileInput}
         onChange={handleFileChange}
-      />
+        />
       <label htmlFor="file" className={styles.uploadButton}>
         Upload
       </label>
@@ -206,6 +207,13 @@ const DetaineeSignUp = () => {
             Submit
           </button>
         </form>
+            <img style={{
+                position:"absolute",
+                right:"0",
+                top:"50%",
+                transform:"translateY(-50%)",
+                width:"300px",
+            }} src={hello} alt="" />
       </div>
     </div>
   );

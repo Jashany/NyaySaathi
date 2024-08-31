@@ -1,0 +1,40 @@
+
+.header {
+    width: 100%;
+    padding-inline: 10rem;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+  }
+  
+  .header div:nth-child(2) {
+    display: flex;
+    gap: 5rem;
+  }
+  
+  .header div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+  
+  .header img {
+    height: 25px;
+  }
+  
+  .header p {
+    font-family: "DM Sans";
+  }
+  
+  .header button {
+    background: #0e1a45;
+    border: none;
+    padding: 0.5rem 2rem;
+    color: white;
+    font-family: var(--font-secondary);
+    cursor: pointer;
+  }
+  

@@ -54,6 +54,7 @@
 
 .body > img {
   width: 400px;
+  margin-left: 10rem;
 }
 
 .upper {
@@ -64,16 +65,16 @@
   margin-top: 2rem;
 }
 
-.upper>div img{
-    height: 40px;
+.upper > div img {
+  height: 40px;
 }
 
 .upper h5 {
   font-family: var(--font-tertiary);
   color: #47505e;
-font-size: 1.5rem;
-margin-top: 1rem;
-width: 70%;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  width: 70%;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -101,7 +102,6 @@ width: 70%;
   font-family: "DM Sans";
   margin-top: 2rem;
   font-size: 0.75rem;
-  
 }
 
 .card h3 {
@@ -109,16 +109,16 @@ width: 70%;
   margin-top: 0.75rem;
   font-family: var(--font-secondary);
   font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: -0.46px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.46px;
 }
 
-.line{
-    background: #182659;
-    width: 400px;
-    height: 4px;
-    margin-top: 8rem;
-    margin-left: 2rem;
-    margin-right: -10rem;
+.line {
+  background: #182659;
+  width: 400px;
+  height: 4px;
+  margin-top: 8rem;
+  position: relative;
+  left: 100px;
 }
