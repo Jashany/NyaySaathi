@@ -28,13 +28,13 @@ const Login = () => {
     const type = formData.role.toLowerCase();
 
     const f = async () => {
-      const res = await axios.post(`http://localhost:3000/api/${type}/login`, {
+      const res = await axios.post(`http://localhost:3000/api/user/login`, {
         email: formData.email,
         password: formData.password,
       },{withCredentials: true});
       
       if(res.status === 200){
-        navigate(`/${type}`);
+        navigate(`/user`);
       }
       else{
         alert("Wrong Password or Email");
