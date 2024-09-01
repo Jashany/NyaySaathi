@@ -4,6 +4,7 @@ import logo from "../../assets/logo.png";
 import hello from "../../assets/hello.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import OffenceInput from "./Comp";
 const DetaineeSignUp = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -164,28 +165,7 @@ const DetaineeSignUp = () => {
           <div className={styles.line}></div>
           <div className={styles.group}>
             <div className={styles.formGroup}>
-              <label>Offence</label>
-              <select
-                name="offence"
-                value={formData.offence}
-                onChange={handleInputChange}
-                className={styles.selectField}
-                style={{ width: "350px" }}
-                >
-                <option style={{ width: "350px" }} value=""></option>
-                <option style={{ width: "350px" }} value="ipc302">
-                  IPC 302
-                </option>
-                <option style={{ width: "350px" }} value="ipc420">
-                  IPC 420
-                </option>
-                <option style={{ width: "350px" }} value="ipc069">
-                  IPC 069
-                </option>
-                <option style={{ width: "350px" }} value="ipc198">
-                  IPC 198
-                </option>
-              </select>
+              <OffenceInput/>
             </div>
             <div className={styles.formGroup}>
               <label>Date of Arrest</label>
